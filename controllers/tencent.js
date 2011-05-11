@@ -2,8 +2,8 @@ var http = require("http"),
     tencent = require("../models/tencent.weibo");
 
 exports.controller = function () {
-    var APP_KEY = "06d52f07e1bb48e0bade40ca641cecad";
-    var APP_SECRET = "eb49a30b8ea8c763ed0159f9f72bdf49";
+    var APP_KEY = "YOUR APP KEY";
+    var APP_SECRET = "YOU APP SECRET";
 
     var index = function () {
             this.render("tencent_index");

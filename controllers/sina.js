@@ -2,8 +2,8 @@ var http = require("http"),
     sinaWeibo = require("../models/sina.weibo");
 
 exports.controller = function () {
-    var APP_KEY = "1662172390";
-    var APP_SECRET = "93b0e339f829b23546b60e2f25e77a9e";
+    var APP_KEY = "YOUR APP KEY";
+    var APP_SECRET = "YOUR APP SECRET";
 
     var index = function (username) {
             this.render("index");
