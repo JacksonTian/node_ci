@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sina microblog</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script src="/static/weibo.publish.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/weibo.css" media="all" />
+    </head>
+    <body>
+        <div id="tweet_box">
+            <textarea></textarea><br />
+            <button>发表新浪微博</button>
+        </div>
+        <div id="tweets">
+            <ul>
+#   if(data.timeline && data.timeline.length) {
+#        var i, timeline = data.timeline, length = data.timeline.length;
+#        for(i = 0; i < length; i++ ) {
+#           var status = timeline[i];
+#           var domain = status.user.domain || status.user.id;
+                <li>
+                    <a href="http://t.sina.com.cn/{domain}" target="_blank"><img src="{status.user.profile_image_url}" /></a>
+                    <em><a href="http://t.sina.com.cn/{domain}" target="_blank">{status.user.name}</a></em>
+                    <span>{status.text} ({status.created_at})</span>
+                    <cite>{status.source}</cite>
+#               if (status.thumbnail_pic) {
+                    <br /><a href="{status.original_pic}" target="_blank" title="点击看大图"><img src="{status.thumbnail_pic}" /></a>
+#}
+                </li>
+#        }
+#    }
+            </ul>
+        </div>
+    </body>
+</html>

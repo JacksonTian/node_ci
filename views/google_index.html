@@ -1,0 +1,17 @@
+<!docytype html>
+<html>
+    <head>
+        <title>Google URL shorter</title>
+        <link rel="stylesheet" type="text/css" href="/static/google.css" media="all" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script src="/static/google.js"></script>
+    </head>
+    <body>
+        <form id="shorterForm" action="/google/getShortURL" method="post">
+            <input id="longURL" type="text" name="longURL" />
+            <button id="shorterIt">Shorter It!</button>
+        </form>
+        <div id="shorterURL"></div>
+        <!--<img id="qr" />-->
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!docytype html>
+<html>
+    <head>
+        <title>Sina microblog emotions</title>
+        <link rel="stylesheet" type="text/css" href="/static/emotions.css" media="all" />
+    </head>
+    <body>
+        <div id="emotions">
+            <ul>
+#            for(var i = 0; i < data.emotions.length; i++) {
+                <li>
+                   <img src="{data.emotions[i].url}" />
+                   <span>{data.emotions[i].phrase}</span>
+                </li>
+#            }
+            </ul>
+        </div>
+    </body>
+</html>
