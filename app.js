@@ -1,7 +1,7 @@
-PORT = 8000;
+var PORT = 8000;
 var http = require('http'),
-    mvc = require('./mvc'),
-    Exception = require('./libraries/exception').Exception;
+    mvc = require('./core/mvc'),
+    Exception = require('./core/libraries/exception').Exception;
 
 var framework = mvc.bootMVC();
 

@@ -1,4 +1,5 @@
-var parse = require('url').parse;
+var parse = require('url').parse,
+    path = require('path');
 
 var Router = function () {
     this.routes = {
@@ -35,7 +36,7 @@ Router.prototype = {
     filter: function (info) {
         if (info.controller === "favicon.ico") {
             info.controller = "statics"
-            info.filePath = "./statics/" + "favicon.ico";
+            info.filePath = path.join(__dirname, "../statics/favicon.ico");
         }
         return info;
     }

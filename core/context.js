@@ -16,8 +16,7 @@ Context.prototype = {
             response = context.response;
 
         var ext = ".html";
-        var filePath = path.join(__dirname, "/views/", view + ext);
-
+        var filePath = path.join(__dirname, "../views/", view + ext);
         path.exists(filePath, function(exists) {
             if(!exists) {
                 framework.handler404(request, response, "This file doesn't exist.");  

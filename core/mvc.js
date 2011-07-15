@@ -55,7 +55,7 @@ MVC.prototype.dispatch = function (request, response) {
             //console.log(request.cookie.map);
             request.session = sessionStorage.getSession(request);
             //console.log(request.session);
-            var controller = require('./controllers/' + routeInfo.controller).controller;
+            var controller = require('../controllers/' + routeInfo.controller).controller;
             if (controller[routeInfo.method] && controller[routeInfo.method][routeInfo.action]) {
                 var context = new Context(request, response, this);
                 controller[routeInfo.method][routeInfo.action].apply(context, routeInfo.args);
@@ -72,7 +72,7 @@ MVC.prototype.dispatch = function (request, response) {
 MVC.prototype.dispatchStatic = function (request, response, filePath) {
     var framework = this;
     if(!filePath){
-        filePath = path.join(__dirname, url.parse(request.url).pathname);
+        filePath = path.join(__dirname, "..", url.parse(request.url).pathname);
     }
     path.exists(filePath, function(exists) {
         if(!exists) {
