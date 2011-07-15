@@ -34,8 +34,8 @@ Router.prototype = {
     // Redirect route or filter route
     filter: function (info) {
         if (info.controller === "favicon.ico") {
-            info.controller = "static"
-            info.filePath = "./static/" + "favicon.ico";
+            info.controller = "statics"
+            info.filePath = "./statics/" + "favicon.ico";
         }
         return info;
     }

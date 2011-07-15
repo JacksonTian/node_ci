@@ -45,7 +45,7 @@ MVC.prototype.dispatch = function (request, response) {
     var routeInfo = this.router.getRouteInfo(request.url, request.method);
     console.log(routeInfo);
     //如果route中有匹配的action，则分发给对应的action
-    if (routeInfo.controller === "static") {
+    if (routeInfo.controller === "statics") {
         this.dispatchStatic(request, response, routeInfo.filePath);
     } else {
         try {
@@ -96,13 +96,13 @@ MVC.prototype.dispatchStatic = function (request, response, filePath) {
     });
 };
 MVC.prototype.handler500 = function(request, response, err){
-    console.log("500:" + err);
+    console.log("500: " + err);
     console.log("\t" + request.url);
     response.writeHead(500, {'Content-Type': 'text/plain'});
     response.end(err);
 };
 MVC.prototype.handler404 = function(request, response, err){
-    console.log("404:" + request.url);
+    console.log("404: " + request.url);
     response.writeHead(404, {'Content-Type': 'text/plain'});
     response.end(err);
 };
